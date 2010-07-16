@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HMMSoundSet Version="1.0">
+
+<Group id="common">
+	<Item id="pre_battle" chunk="Common\prebattl.pcm" constId="PREBATTLE" />
+
+	<Item id="experience" chunk="Common\expernce.pcm" constId="QUEST_DLG" />
+	<Item id="nwherolv" chunk="Common\nwherolv.pcm" constId="NEW_LEVEL_DLG" />
+	<Item id="treasure" chunk="Common\treasure.pcm" constId="TREASURE" />
+	<Item id="flag_mine" chunk="Common\flagmine.pcm" constId="FLAG_MINE" />
+
+	<Item id="button" chunk="Common\button12.pcm" constId="BUTTON" />
+	<Item id="dig" chunk="Common\digsound.pcm" constId="DIG" />
+	<Item id="seawash" chunk="Common\Sea.pcm" constId="SEAWASH" />
+
+	<Item id="pickup01" chunk="Common\pickup01.pcm" constId="PICKUP01" />
+	<Item id="pickup03" chunk="Common\pickup03.pcm" constId="PICKUP02" />
+	<Item id="pickup04" chunk="Common\pickup04.pcm" constId="PICKUP03" />
+	<Item id="pickup05" chunk="Common\pickup05.pcm" constId="PICKUP04" />
+	<Item id="pickup06" chunk="Common\pickup06.pcm" constId="PICKUP05" />
+	<Item id="del_guard" chunk="Common\killfade.pcm" constId="DEL_GUARD" />
+	<Item id="teleport_out" chunk="Common\Telptout.pcm" constId="TELEPORT_OUT" />
+
+	<Item id="hmove01" chunk="Common\wsnd11.pcm" constId="HMOVE01" />
+	<Item id="hmove02" chunk="Common\wsnd12.pcm" constId="HMOVE02" />
+	<Item id="hmove03" chunk="Common\wsnd13.pcm" constId="HMOVE03" />
+	<Item id="hmove04" chunk="Common\wsnd14.pcm" constId="HMOVE04" />
+	<Item id="hmove05" chunk="Common\wsnd15.pcm" constId="HMOVE05" />
+	<Item id="hmove06" chunk="Common\wsnd16.pcm" constId="HMOVE06" />
+
+	<Item id="alch_lab" chunk="Common\AlchLab.pcm" constId="ALCH_LAB" />
+	<Item id="sawmill" chunk="Common\Sawmill.pcm" constId="SAWMILL" />
+	<Item id="mine" chunk="Common\Mine.pcm" constId="MINE" />
+	<Item id="shrine" chunk="Common\Shrine.pcm" constId="SHRINE" />
+	<Item id="stables" chunk="Common\LOOPHORS.pcm" constId="STABLES" />
+	<Item id="volcano" chunk="Common\LOOPVOLC.pcm" constId="VOLCANO" />
+	<Item id="lakes" chunk="Common\Lakes.pcm" constId="LAKES" />
+	<Item id="teleport" chunk="Common\Teleport.pcm" constId="TELEPORT" />
+	<Item id="arena" chunk="Common\Arena.pcm" constId="ARENA" />
+	<Item id="blacksmith" chunk="Common\Blacksmith.pcm" constId="BLACKSMITH" />
+	<Item id="hydra_pond" chunk="Common\HydraPond.pcm" constId="HYDRA_POND" />
+	<Item id="marketplace" chunk="Common\Marketplace.pcm" constId="MARKETPLACE" />
+	<Item id="archers_hut" chunk="Common\ArchersHut.pcm" constId="ARCHERS_HUT" />
+	<Item id="haunted_house" chunk="Common\HauntedHouse.pcm" constId="HAUNTED_HOUSE" />
+</Group>
+
+</HMMSoundSet>

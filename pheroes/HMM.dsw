@@ -1,0 +1,173 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "HMM"=.\Game\HMM.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "He"=..\iolib\He\He.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Li"=..\iolib\Li\Li.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Xe
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "LngEdit"=.\Tools\LngEdit\LngEdit.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name He
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Li
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Si
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Xe
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "MapEditor"=.\MapEditor\MapEditor.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name He
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Li
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Pa
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Si
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Xe
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Pa"=..\iolib\Pa\Pa.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name He
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "SeqPlayer"=.\TOOLS\SeqPlayer\SeqPlayer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name He
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Li
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Xe
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Si"=..\iolib\Si\Si.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Xe
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Xe"=..\iolib\Xe\Xe.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name He
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

@@ -1,0 +1,1600 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "atlres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TREE_FOLDER         BITMAP  MOVEABLE PURE   "res\\folder.bmp"
+IDB_TREE_CLP            BITMAP  MOVEABLE PURE   "res\\tree_clp.bmp"
+IDB_TREE_EXP            BITMAP  MOVEABLE PURE   "res\\tree_exp.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR MOVEABLE PURE  16, 16
+BEGIN
+    BUTTON      ID_TOOL_EDIT
+    SEPARATOR
+    BUTTON      ID_TOOL_SURFACE
+    BUTTON      ID_TOOL_CREATE
+    BUTTON      ID_TOOL_ERASE
+    SEPARATOR
+    BUTTON      ID_VIEW_GRID
+    BUTTON      ID_VIEW_SHADOWS
+    BUTTON      ID_VIEW_PASSMAP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save As ...",                 ID_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "Export data set\tCtrl+E",     ID_EXPORT_DATA
+        MENUITEM "Batch export",                ID_BATCH_EXPORT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM "&Redo\tShift+Ctrl+Z",         ID_EDIT_REDO
+        MENUITEM "&Clear\tCtrl+X",              ID_EDIT_CLEAR
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Show Grid\tG",                ID_VIEW_GRID
+        MENUITEM "Show Shadows\tA",             ID_VIEW_SHADOWS
+        MENUITEM "Show Pass Map\tP",            ID_VIEW_PASSMAP
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "Map specifications\tCtrl+P",  ID_TOOLS_MAPSPEC
+        MENUITEM "Validate map\tCtrl+V",        ID_TOOLS_VALIDATE
+        MENUITEM "Text resources\tCtrl+T",      ID_MAPTEXT
+    END
+    POPUP "Player"
+    BEGIN
+        MENUITEM "Neutral",                     ID_PLAYER_NEUTRAL
+        MENUITEM "Player1 (Red)",               ID_PLAYER1
+        MENUITEM "Player2 (Green)",             ID_PLAYER2
+        MENUITEM "Player3 (Blue)",              ID_PLAYER3
+        MENUITEM "Player4 (Cyan)",              ID_PLAYER4
+        MENUITEM "Player5 (Purple)",            ID_PLAYER5
+        MENUITEM "Player6 (Yellow)",            ID_PLAYER6
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EXPORT DIALOG DISCARDABLE  0, 0, 347, 151
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Export dataset"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,234,132,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,289,132,50,14
+    EDITTEXT        IDC_LOG,10,15,210,105,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    GROUPBOX        "Settings",IDC_STATIC,230,5,110,120
+    GROUPBOX        "Debug output",IDC_STATIC,5,5,220,120
+    CONTROL         "Export resources",IDC_EXPRES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,239,51,90,10
+    EDITTEXT        IDC_MAP_FILENAME,240,30,95,14,ES_AUTOHSCROLL
+    LTEXT           "Map file name:",IDC_STATIC,240,20,55,8
+END
+
+IDD_NEWMAP DIALOG DISCARDABLE  0, 0, 217, 116
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New map"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_MAP_NAME,15,10,185,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,105,95,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,160,95,50,14
+    GROUPBOX        "Map size",IDC_STATIC,5,35,205,50
+    GROUPBOX        "Map name",IDC_STATIC,5,0,205,30
+    COMBOBOX        IDC_MAP_SIZE,15,45,185,62,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Generate random landscape",IDC_GEN_LSCAPE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,30,65,150,10
+END
+
+IDD_EDIT_HERO DIALOG DISCARDABLE  0, 0, 186, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,110,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,75,110,50,14
+    EDITTEXT        IDC_EDIT1,5,15,175,14,ES_AUTOHSCROLL
+    LTEXT           "Name",IDC_STATIC,5,5,80,8
+    LTEXT           "Static",IDC_STATIC,5,35,55,45
+    COMBOBOX        IDC_COMBO1,70,35,48,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PAGE_ARMY DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Customize",IDC_CUSTOMIZE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,10,60,10
+    COMBOBOX        IDC_SLOT1_CRTYPE,50,36,113,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT1_QUANTED,170,36,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT1_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,36,11,13
+    COMBOBOX        IDC_SLOT2_CRTYPE,50,50,113,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT2_QUANTED,170,50,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT2_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,50,11,13
+    COMBOBOX        IDC_SLOT3_CRTYPE,50,65,113,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT3_QUANTED,170,65,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT3_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,65,11,13
+    COMBOBOX        IDC_SLOT4_CRTYPE,50,80,113,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT4_QUANTED,170,81,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT4_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,81,11,13
+    COMBOBOX        IDC_SLOT5_CRTYPE,50,95,113,90,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT5_QUANTED,170,95,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT5_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,95,11,13
+    COMBOBOX        IDC_SLOT6_CRTYPE,50,111,113,75,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT6_QUANTED,170,111,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT6_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,111,11,13
+    COMBOBOX        IDC_SLOT7_CRTYPE,50,125,113,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SLOT7_QUANTED,170,127,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SLOT7_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,127,11,13
+    LTEXT           "Type",IDC_STATIC,50,25,30,8
+    RTEXT           "Slot 1",IDC_STATIC,10,38,35,8
+    RTEXT           "Slot 2",IDC_STATIC,10,52,35,8
+    RTEXT           "Slot 3",IDC_STATIC,10,67,35,8
+    RTEXT           "Slot 4",IDC_STATIC,10,83,35,8
+    RTEXT           "Slot 5",IDC_STATIC,10,97,35,8
+    RTEXT           "Slot 6",IDC_STATIC,10,113,35,8
+    RTEXT           "Slot 7",IDC_STATIC,10,128,35,8
+    LTEXT           "Quantity",IDC_STATIC,170,25,40,8
+    LTEXT           "Note: 0 means random quantity.",IDC_STATIC,50,145,170,8
+END
+
+IDD_PAGE_MESSAGE DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Set custom message",IDC_CUSTOMIZE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,10,80,10
+    EDITTEXT        IDC_MSG_EDIT,10,25,215,124,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_PAGE_GEN_MINERAL DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Random",IDC_RADIO_RANDOM,"Button",BS_AUTORADIOBUTTON,25,
+                    40,43,10
+    CONTROL         "Custom:",IDC_RADIO_CUSTOM,"Button",BS_AUTORADIOBUTTON,
+                    25,55,41,10
+    EDITTEXT        IDC_QUANTITY_EDIT,35,65,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTITY_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,75,65,11,13
+    LTEXT           "Mineral type:",IDC_STATIC,10,10,45,8
+    LTEXT           "None",IDC_MT_STATIC,65,10,50,8
+    GROUPBOX        "Quantity",IDC_STATIC,10,25,215,60
+END
+
+IDD_PAGE_GEN_GUARD DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Random",IDC_RADIO_RANDOM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,25,40,43,10
+    CONTROL         "Custom:",IDC_RADIO_CUSTOM,"Button",BS_AUTORADIOBUTTON,
+                    25,55,41,10
+    EDITTEXT        IDC_QUANTITY_EDIT,35,65,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTITY_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,75,65,11,13
+    CONTROL         "Quantity does not grow",IDC_NOTGROW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,40,90,10
+    CONTROL         "Compliaint\n(will always join hero)",IDC_DISP01,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE | WS_GROUP,20,100,80,
+                    20
+    CONTROL         "Aggressive\n(may join hero)",IDC_DISP02,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,20,120,80,20
+    CONTROL         "Savage\n(will never join hero)",IDC_DISP03,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,115,100,80,20
+    LTEXT           "Type:",IDC_STATIC,10,10,45,8
+    LTEXT           "None",IDC_CT_STATIC,65,10,163,8
+    GROUPBOX        "Quantity",IDC_STATIC,10,25,215,60
+    GROUPBOX        "Disposition",IDC_STATIC,10,90,215,60
+END
+
+IDD_PAGE_GEN_OWNCNST DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Owner",IDC_STATIC,5,5,225,95
+    CONTROL         "Neutral",ID_PLAYER_NEUTRAL,"Button",BS_AUTORADIOBUTTON,
+                    20,20,90,10
+    CONTROL         "Player 1 (Red)",ID_PLAYER1,"Button",BS_AUTORADIOBUTTON,
+                    20,30,90,10
+    CONTROL         "Player 2 (Green)",ID_PLAYER2,"Button",
+                    BS_AUTORADIOBUTTON,20,40,90,10
+    CONTROL         "Player 3 (Blue)",ID_PLAYER3,"Button",BS_AUTORADIOBUTTON,
+                    20,50,90,10
+    CONTROL         "Player 4 (Cyan)",ID_PLAYER4,"Button",BS_AUTORADIOBUTTON,
+                    20,60,90,10
+    CONTROL         "Player 5 (Purple)",ID_PLAYER5,"Button",
+                    BS_AUTORADIOBUTTON,20,70,90,10
+    CONTROL         "Player 6 (Yellow)",ID_PLAYER6,"Button",
+                    BS_AUTORADIOBUTTON,20,80,90,10
+END
+
+IDD_PAGE_GEN_CASTLE DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_CUSTOMIZE_EDIT,15,25,135,14,ES_AUTOHSCROLL
+    CONTROL         "Customize",IDC_CUSTOMIZE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,27,48,10
+    CONTROL         "Neutral",ID_PLAYER_NEUTRAL,"Button",BS_AUTORADIOBUTTON,
+                    15,70,90,10
+    CONTROL         "Player 1 (Red)",ID_PLAYER1,"Button",BS_AUTORADIOBUTTON,
+                    15,80,90,10
+    CONTROL         "Player 2 (Green)",ID_PLAYER2,"Button",
+                    BS_AUTORADIOBUTTON,15,90,90,10
+    CONTROL         "Player 3 (Blue)",ID_PLAYER3,"Button",BS_AUTORADIOBUTTON,
+                    15,100,90,10
+    CONTROL         "Player 4 (Cyan)",ID_PLAYER4,"Button",BS_AUTORADIOBUTTON,
+                    15,110,90,10
+    GROUPBOX        "Owner",IDC_STATIC,5,55,225,95
+    GROUPBOX        "Name",IDC_STATIC,5,10,225,40
+    CONTROL         "Player 5 (Purple)",ID_PLAYER5,"Button",
+                    BS_AUTORADIOBUTTON,15,120,90,10
+    CONTROL         "Player 6 (Yellow)",ID_PLAYER6,"Button",
+                    BS_AUTORADIOBUTTON,15,130,90,10
+END
+
+IDD_MSPAGE_GENERAL DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_DIFFICULTY,10,20,110,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MAP_NAME,10,50,155,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DESCRIPTION,10,80,215,69,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "Map name:",IDC_STATIC,10,40,90,8
+    LTEXT           "Description:",IDC_STATIC,10,70,90,8
+    LTEXT           "Map difficulty:",IDC_STATIC,10,10,90,8
+    LTEXT           "Map version:",IDC_STATIC,175,40,50,8
+    EDITTEXT        IDC_MAP_VERSION,175,50,50,14,ES_AUTOHSCROLL
+    LTEXT           "Author:",IDC_STATIC,130,10,40,8
+    EDITTEXT        IDC_MAP_AUTHOR,130,20,95,14,ES_AUTOHSCROLL
+END
+
+IDD_MSPAGE_PLAYERS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Player 1 (Red)",IDC_PLAYER1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,21,80,10
+    COMBOBOX        IDC_TYPE_PLAYER1,101,20,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Player 2 (Green)",IDC_PLAYER2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,42,80,10
+    COMBOBOX        IDC_TYPE_PLAYER2,101,39,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Player 3 (Blue)",IDC_PLAYER3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,61,80,10
+    COMBOBOX        IDC_TYPE_PLAYER3,101,60,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Player 4 (Cyan)",IDC_PLAYER4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,80,80,10
+    COMBOBOX        IDC_TYPE_PLAYER4,101,79,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Player 5 (Purple)",IDC_PLAYER5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,100,80,10
+    COMBOBOX        IDC_TYPE_PLAYER5,101,100,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Player 6 (Yellow)",IDC_PLAYER6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,120,80,10
+    COMBOBOX        IDC_TYPE_PLAYER6,101,119,85,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER1,191,20,35,13
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER2,191,39,35,13
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER3,191,60,35,13
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER4,191,79,35,13
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER5,191,100,35,13
+    PUSHBUTTON      "Settings",IDC_SETTINGS_PLAYER6,191,119,35,13
+END
+
+IDD_PAGE_GEN_HERO DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_CUSTOMIZE_EDIT,15,25,135,14,ES_AUTOHSCROLL
+    CONTROL         "Customize",IDC_CUSTOMIZE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,160,27,48,10
+    GROUPBOX        "Owner",IDC_STATIC,5,55,110,95
+    GROUPBOX        "Name",IDC_STATIC,5,10,225,40
+    CONTROL         "Neutral",ID_PLAYER_NEUTRAL,"Button",BS_AUTORADIOBUTTON,
+                    15,70,90,10
+    CONTROL         "Player 1 (Red)",ID_PLAYER1,"Button",BS_AUTORADIOBUTTON,
+                    15,80,90,10
+    CONTROL         "Player 2 (Green)",ID_PLAYER2,"Button",
+                    BS_AUTORADIOBUTTON,15,90,90,10
+    CONTROL         "Player 3 (Blue)",ID_PLAYER3,"Button",BS_AUTORADIOBUTTON,
+                    15,100,90,10
+    CONTROL         "Player 4 (Cyan)",ID_PLAYER4,"Button",BS_AUTORADIOBUTTON,
+                    15,110,90,10
+    CONTROL         "Player 5 (Purple)",ID_PLAYER5,"Button",
+                    BS_AUTORADIOBUTTON,15,120,90,10
+    CONTROL         "Player 6 (Yellow)",ID_PLAYER6,"Button",
+                    BS_AUTORADIOBUTTON,15,130,90,10
+    GROUPBOX        "Primary skills",IDC_STATIC,120,55,110,95
+    EDITTEXT        IDC_PRSKILL_EDIT1,175,70,35,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_PRSKILL_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,70,11,13
+    EDITTEXT        IDC_PRSKILL_EDIT2,175,90,35,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_PRSKILL_SPIN2,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,90,11,13
+    EDITTEXT        IDC_PRSKILL_EDIT3,175,110,35,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_PRSKILL_SPIN3,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,110,11,13
+    EDITTEXT        IDC_PRSKILL_EDIT4,175,130,35,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_PRSKILL_SPIN4,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,210,130,11,13
+    RTEXT           "Attack :",IDC_STATIC,125,72,44,8
+    RTEXT           "Defence :",IDC_STATIC,125,92,44,8
+    RTEXT           "Spell power :",IDC_STATIC,125,112,44,8
+    RTEXT           "Knowledge :",IDC_STATIC,125,132,44,8
+END
+
+IDD_PAGE_HERO_SKILLS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_SKILL_TYPE1,15,25,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL1,130,25,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE2,15,40,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL2,130,40,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE3,15,55,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL3,130,55,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE4,15,70,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL4,130,70,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE5,15,85,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL5,130,85,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE6,15,100,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL6,130,100,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE7,15,115,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL7,130,115,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_TYPE8,15,130,110,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SKILL_LEVEL8,130,130,90,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type:",IDC_STATIC,15,15,45,8
+    LTEXT           "Mastery:",IDC_STATIC,130,15,45,8
+END
+
+IDD_PAGE_CTL_CNSTS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Customize",IDC_CUSTOMIZE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,10,48,10
+    LISTBOX         IDC_CNST_LIST,10,25,130,125,LBS_OWNERDRAWFIXED | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Built",IDC_BUILT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    160,30,55,10
+END
+
+IDD_PAGE_SPELLBOOK DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Customize",IDC_CUSTOMIZE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,10,48,10
+    LISTBOX         IDC_SPELL_LIST,10,25,130,125,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add spell",IDC_ADD,150,25,75,14
+    PUSHBUTTON      "Remove spell",IDC_REMOVE,150,45,75,14
+    PUSHBUTTON      "Reset spell book",IDC_RESET,150,95,75,14
+    PUSHBUTTON      "Add all spells",IDC_ADDALL,150,75,75,14
+END
+
+IDD_PAGE_GEN_SPELLSCROLL DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Type: Spell Scroll",IDC_STATIC,8,10,77,8
+    LTEXT           "Spell:",IDC_STATIC,7,34,20,8
+    COMBOBOX        IDC_SPELL_COMBO,30,30,125,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MAP_VALIDATE DIALOG DISCARDABLE  0, 0, 227, 211
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Map validation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,190,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,190,50,14
+    EDITTEXT        IDC_REPORT,10,20,205,160,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "Errors:",IDC_STATIC,10,10,85,8
+END
+
+IDD_PAGE_TIME_EVENTS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_EVENT_LIST,10,10,160,140,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_ADD_EVENT,175,10,55,14
+    PUSHBUTTON      "Edit",IDC_EDIT_EVENT,175,30,55,14
+    PUSHBUTTON      "Delete",IDC_DELETE_EVENT,175,50,55,14
+    PUSHBUTTON      "Delete all",IDC_DELETE_ALL_EVENTS,175,70,55,14
+END
+
+IDD_PAGE_GEN_MAPEVENT DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_REWARDMSG_EDIT,10,20,215,30,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    EDITTEXT        IDC_ATTACKMSG_EDIT,10,65,215,30,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "Player 1 (Red)",IDC_PLAYER1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,121,65,10
+    CONTROL         "Player 2 (Green)",IDC_PLAYER2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,121,65,10
+    CONTROL         "Player 3 (Blue)",IDC_PLAYER3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,155,121,65,10
+    CONTROL         "Player 4 (Cyan)",IDC_PLAYER4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,135,65,10
+    CONTROL         "Player 5 (Purple)",IDC_PLAYER5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,135,65,10
+    CONTROL         "Player 6 (Yellow)",IDC_PLAYER6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,155,135,65,10
+    LTEXT           "Reward message:",IDC_STATIC,10,10,58,8
+    GROUPBOX        "Players allowed to trigger event",IDC_STATIC,10,105,215,
+                    45
+    LTEXT           "Attack message (only for guarded event):",IDC_STATIC,10,
+                    55,130,8
+END
+
+IDD_PAGE_REWARDS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_REWARDS_LIST,10,10,130,140,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add reward",IDC_ADD,150,10,75,14
+    PUSHBUTTON      "Remove reward",IDC_REMOVE,150,30,75,14
+    PUSHBUTTON      "Reset reward list",IDC_RESET,150,50,75,14
+END
+
+IDD_ULTIMATE_ART DIALOG DISCARDABLE  0, 0, 167, 57
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ultimatre Artifact properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_RADIUS_ED,125,10,35,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_RADIUS_SP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,155,10,11,13
+    DEFPUSHBUTTON   "OK",IDOK,55,35,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,35,50,14
+    LTEXT           "Select allowable placement radius:",IDC_STATIC,10,12,
+                    110,8
+END
+
+IDD_MAPTEXT DIALOG DISCARDABLE  0, 0, 297, 236
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Text resources"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,185,215,50,14
+    LISTBOX         IDC_TEXTRES_LIST,5,5,285,185,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Edit",IDC_EDITBTN,240,215,50,14
+    COMBOBOX        IDC_LNGLIST,5,195,115,50,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_MSPAGE_LANGS DIALOG DISCARDABLE  0, 0, 235, 160
+STYLE WS_CHILD | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "English",IDC_LNG_ENG_01,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,20,110,10
+    CONTROL         "Russian",IDC_LNG_RUS_02,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,36,110,10
+    CONTROL         "Polish",IDC_LNG_POL_03,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,49,110,10
+    CONTROL         "Slovak",IDC_LNG_SLV_04,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,65,110,10
+    CONTROL         "German",IDC_LNG_GER_05,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,81,110,10
+    CONTROL         "Czech",IDC_LNG_CZE_06,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,20,110,10
+    CONTROL         "Italian",IDC_LNG_ITA_07,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,36,110,10
+    CONTROL         "French",IDC_LNG_FRN_08,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,50,110,10
+    CONTROL         "Spanish",IDC_LNG_SPN_09,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,65,110,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_EXPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 340
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_NEWMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_EDIT_HERO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_PAGE_ARMY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_MESSAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_MINERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_GUARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_OWNCNST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_CASTLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_MSPAGE_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_MSPAGE_PLAYERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_HERO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_HERO_SKILLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_CTL_CNSTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SPELLBOOK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_SPELLSCROLL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_MAP_VALIDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 204
+    END
+
+    IDD_PAGE_TIME_EVENTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_GEN_MAPEVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_REWARDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_ULTIMATE_ART, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_MAPTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_MSPAGE_LANGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 153
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_BRUSH_SIZ           BITMAP  MOVEABLE PURE   "res\\toolbar2.bmp"
+IDB_MAINTB24            BITMAP  MOVEABLE PURE   "res\\maintb24.bmp"
+IDR_SURF_TYPE           BITMAP  MOVEABLE PURE   "res\\bmp00001.bmp"
+IDB_SURFTB24            BITMAP  MOVEABLE PURE   "res\\surftb24.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_BRUSH_SIZ TOOLBAR MOVEABLE PURE  16, 16
+BEGIN
+    BUTTON      ID_BRUSH01
+    BUTTON      ID_BRUSH02
+    BUTTON      ID_BRUSH03
+    BUTTON      ID_BRUSH04
+    BUTTON      ID_BRUSH05
+END
+
+IDR_SURF_TYPE TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_SURF_WATER
+    BUTTON      ID_SURF_SAND
+    BUTTON      ID_SURF_DIRT
+    BUTTON      ID_SURF_GRASS
+    BUTTON      ID_SURF_SWAMP
+    BUTTON      ID_SURF_LAVA
+    BUTTON      ID_SURF_WASTELAND
+    BUTTON      ID_SURF_DESERT
+    BUTTON      ID_SURF_SNOW
+    BUTTON      ID_SURF_NDESERT
+    BUTTON      ID_SURF_COBBLES1
+    BUTTON      ID_SURF_COBBLES2
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPS_GUARD DIALOG DISCARDABLE  0, 0, 131, 86
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Random",IDC_RADIO_QUANTITY_RANDOM,"Button",
+                    BS_AUTORADIOBUTTON,10,5,43,10
+    CONTROL         "Custom:",IDC_RADIO_QUANTITY_CUSTOM,"Button",
+                    BS_AUTORADIOBUTTON,10,20,41,10
+    EDITTEXT        IDC_EDIT_QUANTITY,30,35,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTITY_UPDOWN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,70,35,11,14
+    CONTROL         "Quantity does not grow",IDC_CHECK_QUANTITY_NOTGROW,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,60,89,10
+END
+
+IDD_PROPS_MINERAL DIALOG DISCARDABLE  0, 0, 242, 171
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,150,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,185,150,50,14
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32",0x0,5,5,230,140
+END
+
+IDD_SPELL_LIST DIALOG DISCARDABLE  0, 0, 247, 171
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Spell List"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,65,150,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,150,50,14
+    LISTBOX         IDC_SPELL_LIST,10,10,225,130,LBS_NOINTEGRALHEIGHT | 
+                    LBS_MULTICOLUMN | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_PLAYER_INFO DIALOG DISCARDABLE  0, 0, 232, 86
+STYLE DS_ABSALIGN | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Player Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,120,65,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,175,65,50,14
+    COMBOBOX        IDC_CTL_LIST,70,20,145,110,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Create hero in main castle",IDC_CREATE_HERO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,38,120,10
+    GROUPBOX        "Main castle",IDC_STATIC,5,10,220,45
+    LTEXT           "Main castle:",IDC_STATIC,16,24,49,8
+END
+
+IDD_TIME_EVENT DIALOG DISCARDABLE  0, 0, 277, 257
+STYLE DS_ABSALIGN | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Time event"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EVENT_NAME,5,20,265,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EVENT_TEXT,5,50,265,40,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "Player 1 (Red)",IDC_PLAYER1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,110,65,10
+    CONTROL         "Player 2 (Green)",IDC_PLAYER2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,125,65,10
+    CONTROL         "Player 3 (Blue)",IDC_PLAYER3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,140,65,10
+    CONTROL         "Player 4 (Cyan)",IDC_PLAYER4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,110,65,10
+    CONTROL         "Player 5 (Purple)",IDC_PLAYER5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,126,65,10
+    CONTROL         "Player 6 (Yellow)",IDC_PLAYER6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,141,65,10
+    EDITTEXT        IDC_FTIME_EDIT,105,175,45,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_FTIME_SPAN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,145,175,11,13
+    COMBOBOX        IDC_REPEAT_COMBO,50,196,100,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MINERAL1_QUANTED,221,110,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL1_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,254,110,11,13
+    EDITTEXT        IDC_MINERAL2_QUANTED,221,125,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL2_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,125,11,13
+    EDITTEXT        IDC_MINERAL3_QUANTED,221,140,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL3_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,140,11,13
+    EDITTEXT        IDC_MINERAL4_QUANTED,221,154,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL4_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,154,11,13
+    EDITTEXT        IDC_MINERAL5_QUANTED,221,170,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL5_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,170,11,13
+    EDITTEXT        IDC_MINERAL6_QUANTED,221,185,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL6_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,185,11,13
+    EDITTEXT        IDC_MINERAL7_QUANTED,221,199,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL7_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,255,199,11,13
+    DEFPUSHBUTTON   "OK",IDOK,165,234,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,221,234,50,14
+    LTEXT           "Event name:",IDC_STATIC,5,10,41,8
+    LTEXT           "Event text:",IDC_STATIC,5,40,35,8
+    GROUPBOX        "Minerals",IDC_STATIC,165,95,105,130
+    RTEXT           "Gold:",IDC_STATIC,175,114,39,8
+    RTEXT           "Wood:",IDC_STATIC,175,145,39,8
+    RTEXT           "Ore:",IDC_STATIC,175,130,39,8
+    RTEXT           "Mercury:",IDC_STATIC,175,159,39,8
+    RTEXT           "Gems:",IDC_STATIC,175,175,39,8
+    RTEXT           "Crystal:",IDC_STATIC,175,190,39,8
+    RTEXT           "Sulfur:",IDC_STATIC,175,205,39,8
+    GROUPBOX        "Players to which event applies",IDC_STATIC,5,95,155,65
+    GROUPBOX        "Event frequency",IDC_STATIC,5,165,155,60
+    LTEXT           "First time occurs at (day):",IDC_STATIC,10,180,85,8
+    LTEXT           "Repeat:",IDC_STATIC,15,200,30,8
+END
+
+IDD_REWARD_TYPE DIALOG DISCARDABLE  0, 0, 172, 131
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Reward type"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,110,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,115,110,50,14
+    CONTROL         "Mineral",IDC_REWARDT_1,"Button",BS_AUTORADIOBUTTON,20,
+                    20,65,10
+    CONTROL         "Experience",IDC_REWARDT_2,"Button",BS_AUTORADIOBUTTON,
+                    20,35,65,10
+    CONTROL         "Mana points",IDC_REWARDT_3,"Button",BS_AUTORADIOBUTTON,
+                    20,50,65,10
+    CONTROL         "Travel points",IDC_REWARDT_4,"Button",
+                    BS_AUTORADIOBUTTON,20,65,65,10
+    CONTROL         "Morale",IDC_REWARDT_5,"Button",BS_AUTORADIOBUTTON,20,80,
+                    65,10
+    CONTROL         "Luck",IDC_REWARDT_6,"Button",BS_AUTORADIOBUTTON,95,20,
+                    65,10
+    CONTROL         "Primary skill",IDC_REWARDT_7,"Button",
+                    BS_AUTORADIOBUTTON,95,35,65,10
+    CONTROL         "Artifact",IDC_REWARDT_8,"Button",BS_AUTORADIOBUTTON,95,
+                    50,65,10
+    CONTROL         "Magic spell",IDC_REWARDT_9,"Button",BS_AUTORADIOBUTTON,
+                    95,66,65,10
+    CONTROL         "Creatures",IDC_REWARDT_10,"Button",BS_AUTORADIOBUTTON,
+                    95,81,65,10
+    GROUPBOX        "Select reward type",IDC_STATIC,5,5,160,95
+END
+
+IDD_REW_MINERAL DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Mineral"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,55,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,45,50,14
+    LTEXT           "Mineral type:",IDC_STATIC,5,10,41,8
+    COMBOBOX        IDC_MIN_TYPE,5,20,125,95,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MINERAL_QUANTED,135,20,40,13,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINERAL_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,169,20,11,13
+    LTEXT           "Quantity:",IDC_STATIC,135,10,29,8
+END
+
+IDD_REW_EXPERIENCE DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Experience"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,45,50,14
+    EDITTEXT        IDC_QUANTED,35,20,110,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTSP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,140,20,11,13
+    LTEXT           "Experience:",-1,35,10,38,8
+END
+
+IDD_REW_MANAPTS DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Mana points"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,45,50,14
+    EDITTEXT        IDC_QUANTED,35,20,110,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTSP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,140,20,11,13
+    LTEXT           "Mana points:",-1,35,10,42,8
+END
+
+IDD_REW_TRAVELPTS DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Travel points"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,45,50,14
+    EDITTEXT        IDC_QUANTED,35,20,110,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTSP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,140,20,11,13
+    LTEXT           "Travel points:",-1,35,10,44,8
+END
+
+IDD_REW_MORALE DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Morale"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,45,50,14
+    LTEXT           "Morale:",-1,35,10,24,8
+    EDITTEXT        IDC_QUANTED,35,20,110,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTSP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,140,20,11,13
+END
+
+IDD_REW_LUCK DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Luck"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,95,45,50,14
+    LTEXT           "Luck:",-1,35,10,19,8
+    EDITTEXT        IDC_QUANTED,35,20,110,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_QUANTSP,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,140,20,11,13
+END
+
+IDD_REW_FURTSKILL DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Primary skill"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,55,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,45,50,14
+    LTEXT           "Primary skill:",IDC_STATIC,5,10,39,8
+    COMBOBOX        IDC_SKILL_TYPE,5,20,125,95,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_SKILL_VALED,135,20,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SKILL_VALSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,169,20,11,13
+    LTEXT           "Value:",IDC_STATIC,135,10,21,8
+END
+
+IDD_REW_SPELL DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Spell"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,100,45,50,14
+    LTEXT           "Spell:",-1,35,10,18,8
+    COMBOBOX        IDC_SPELL_LIST,35,20,115,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_REW_ARTIFACT DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Artifact"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,100,45,50,14
+    LTEXT           "Artifact:",-1,35,10,25,8
+    COMBOBOX        IDC_ARTIFACT_LIST,35,20,115,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_REW_CREATGROUP DIALOGEX 0, 0, 182, 66
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Reward: Creatures"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,55,45,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,45,50,14
+    LTEXT           "Creature type:",IDC_STATIC,5,10,45,8
+    COMBOBOX        IDC_CREAT_TYPE,5,20,125,95,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_CREAT_QUANTED,135,20,40,13,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_CREAT_QUANTSP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,169,20,11,13
+    LTEXT           "Quantity:",IDC_STATIC,135,10,29,8
+END
+
+IDD_TEXTEDIT DIALOG DISCARDABLE  0, 0, 282, 196
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,170,175,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,225,175,50,14
+    EDITTEXT        IDC_TEXT,5,90,270,80,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    EDITTEXT        IDC_ORIG_TEXT,5,5,270,80,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_PROPS_GUARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 124
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_PROPS_MINERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 164
+    END
+
+    IDD_SPELL_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 164
+    END
+
+    IDD_PLAYER_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 79
+    END
+
+    IDD_TIME_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_REWARD_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_REW_MINERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_EXPERIENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_MANAPTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_TRAVELPTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_MORALE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_LUCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_FURTSKILL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_SPELL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_ARTIFACT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_REW_CREATGROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_TEXTEDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 275
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ""res\\\\MapEditor.exe.manifest""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MapEditor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "Z",            ID_EDIT_REDO,           VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "V",            ID_TOOLS_VALIDATE,      VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_EXPORT_DATA,         VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_TOOLS_MAPSPEC,       VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_MAPTEXT,             VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_VIEW_GRID,           VIRTKEY, NOINVERT
+    "A",            ID_VIEW_SHADOWS,        VIRTKEY, NOINVERT
+    "P",            ID_VIEW_PASSMAP,        VIRTKEY, NOINVERT
+    "E",            ID_ERASE,               VIRTKEY, NOINVERT
+    "I",            ID_TOOL_EDIT,           VIRTKEY, NOINVERT
+    "L",            ID_TOOL_SURFACE,        VIRTKEY, NOINVERT
+    "D",            ID_TOOL_CREATE,         VIRTKEY, NOINVERT
+    "]",            ID_SURF_UP,             ASCII,  NOINVERT
+    "[",            ID_SURF_DOWN,           ASCII,  NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "test1 Module\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TEST1\0"
+            VALUE "LegalCopyright", "Copyright 2004\0"
+            VALUE "OriginalFilename", "MapEditor.exe\0"
+            VALUE "ProductName", "MapEditor Module\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "MapEditor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_SCSIZE          "Change the window size"
+    ATL_IDS_SCMOVE          "Change the window position"
+    ATL_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    ATL_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    ATL_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    ATL_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    ATL_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_SCRESTORE       "Restore the window to normal size"
+    ATL_IDS_SCTASKLIST      "Activate Task List"
+    ATL_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_MRU_FILE        "Open this document"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res\\MapEditor.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

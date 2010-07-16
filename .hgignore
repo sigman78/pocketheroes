@@ -1,0 +1,23 @@
+# this is ignore file
+# dont ignore it!
+syntax:glob
+*.user
+*.tmp
+*.pcb
+*.ncb
+*.obj
+*.suo
+*.o
+*.o.d
+*.pch
+*.pdb
+*.exp
+*.ilk
+.DS_Store
+.svn
+iolib\\obj\\*
+pheroes\\obj\\*
+pheroes\\bin\\*.exe
+pheroes\\bin\\Game\\Data\\*
+pheroes\\bin\\Game\\Maps\\*
+pheroes\\bin\\Game\\Save\\*

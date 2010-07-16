@@ -1,0 +1,96 @@
+; vars
+; INC = 
+; subs
+; SRC = #SRC#
+; LNG = #LNG#
+; VER = #VER#
+
+[CEStrings]
+InstallDir=%CE1%\%AppName%
+AppName="Palm Heroes #VER# #LNG#"
+
+[Strings]
+CompanyName="iO UpG"
+RegPath = "Software\PalmHeroes"
+
+[Version]
+Signature="$Windows NT$"
+Provider=%CompanyName%
+CESignature="$Windows CE$"
+
+[CEDevice.ARM]
+ProcessorType = 2577
+VersionMin = 3.0            ; Specifies minimum version of Windows CE
+VersionMax = 6.0            ; Specifies maximum version of Windows CE
+
+[Shortcut_Section]
+Shortcut_name,Shortcut_type,Target_file,Standard_destination_path
+
+[Shortcuts]
+%AppName%,0,"PalmHeroes.exe"
+
+[SourceDisksNames]
+1=,"Binaries",,#SRC#
+2=,"Data",,#SRC#\Data
+3=,"Maps",,#SRC#\Maps
+
+;
+; Install
+;
+[DefaultInstall]
+CopyFiles = Files.Data,Files.Maps		; Points to Files.Common for files to copy
+AddReg= RegSettings.All
+CEShortcuts=Shortcuts		; Specifies common shortcut lists
+
+[DefaultInstall.ARM]
+CopyFiles=Files.ARM  
+
+;
+; Source disk files
+;
+[SourceDisksFiles]
+hmm_w2k3_#LNG#.exe=1
+build.ver=1
+
+fonts.dat=2
+game.pix=2
+game.gfx=2
+game.sfx=2
+objects.dat=2
+dumpset.dat=2
+
+@include map_list.txt =3
+
+;
+; Files
+;
+[Files.ARM]
+PalmHeroes.exe, hmm_w2k3_#LNG#.exe
+build.ver,,,0
+
+[Files.Data]
+fonts.dat,,,0
+game.pix,,,0
+game.gfx,,,0
+game.sfx,,,0
+objects.dat,,,0
+dumpset.dat,,,0
+
+[Files.Maps]
+@include map_list.txt ,,,0
+
+;
+; Destination dirs
+;
+[DestinationDirs]
+Shortcuts=0,%CE14%
+Files.ARM = 0,%InstallDir%
+Files.Data = 0,%InstallDir%\Data
+Files.Maps = 0,%InstallDir%\Maps
+
+;
+;
+[RegSettings.All]
+HKLM,%RegPath%,Installed,0x00010001,1 ; test = 3
+
+;
